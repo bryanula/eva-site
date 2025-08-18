@@ -1,21 +1,15 @@
 <!doctype html>
-<html lang="es"><head>
+<html lang="es">
+<head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EVA — Equity Virtual Assistant</title>
-<meta name="description" content="EVA elimina barreras educativas con transcripción, acompañamiento y recordatorios accesibles.">
-<link rel="icon" href="eva-logo.png">
+<title>EVA — Impacto y sostenibilidad</title>
+<meta name="description" content="Impacto y sostenibilidad de EVA en universidades.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- PWA / Theme preload -->
 <script>
-// Pre-carga de tema para evitar parpadeo
-(function(){
-  try{
-    var ls=localStorage.getItem('theme');
-    var systemDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var t=ls || (systemDark?'dark':'light');
-    document.documentElement.setAttribute('data-theme', t);
-  }catch(e){}
-})();
+(function(){try{var ls=localStorage.getItem('theme');var sys=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;var t=ls||(sys?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 <link rel="manifest" href="site.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -25,33 +19,17 @@
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0F1C">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="EVA">
-
-<link rel="apple-touch-startup-image" href="icons/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="icons/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
 <link rel="stylesheet" href="styles.css">
-</head><body>
-
+</head>
+<body>
 <header class="header" role="banner">
   <div class="container header__inner">
     <a class="brand" href="index.html">
-      <img src="evalogoface.jpg" alt="Logo EVA">
-      <span>EVA</span>
+      <img src="eva-logo.png" alt="Logo EVA"><span>EVA</span>
     </a>
     <div class="controls">
       <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
-        <span class="ico">🌞</span>
+        <span class="ico">🌞</span><span class="label">Tema</span>
       </button>
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
         <span class="hamb"></span>
@@ -69,14 +47,32 @@
   </div>
 </header>
 
+<main class="container" id="top">
+  <section>
+    <h2 class="reveal">Impacto y sostenibilidad</h2>
+    <ul class="check impact-split reveal">
+      <li>Mejora de retención y satisfacción</li>
+      <li>Digitalización y reducción de papel</li>
+      <li class="break">Cumplimiento de la Ley 7600</li>
+      <li>Métricas de inclusión</li>
+    </ul>
 
-<main class="container" id="top"><section><h2 class="reveal">Impacto y sostenibilidad</h2>
-<ul class="check"><li>Mejora de retención y satisfacción</li><li>Digitalización y reducción de papel</li>
-<ul class="check"><li>Cumplimiento de la Ley 7600</li><li>Métricas de inclusión</li></ul>
-<div class="grid-2">
-  <div class="card reveal-pop"><h3>Casos de uso</h3><ul class="check"><li>Subtítulos en laboratorios</li><li>Guía para becas y matrícula</li><li>Recordatorios académicos</li></ul></div>
-  <div class="card reveal-pop"><h3>Metodología</h3><p>Pilotos por facultad, evaluación continua y gestión del cambio con capacitación.</p></div>
-</div></section></main>
+    <div class="grid-2">
+      <div class="card reveal-pop">
+        <h3>Casos de uso</h3>
+        <ul class="check">
+          <li>Subtítulos en laboratorios</li>
+          <li>Guía para becas y matrícula</li>
+          <li>Recordatorios académicos</li>
+        </ul>
+      </div>
+      <div class="card reveal-pop">
+        <h3>Metodología</h3>
+        <p>Pilotos por facultad, evaluación continua y gestión del cambio con capacitación.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer role="contentinfo">
   <div class="container" style="display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap">
@@ -85,11 +81,11 @@
   </div>
 </footer>
 <script>
-// ==== Mobile menu (animated burger) ====
+// === Mobile menu (animated burger) ===
 const btn=document.querySelector('.menu-toggle'), nav=document.getElementById('nav');
 if(btn&&nav){btn.addEventListener('click',()=>{nav.classList.toggle('is-open');btn.classList.toggle('open');const ex=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!ex));});}
 
-// ==== Reveal on scroll ====
+// === Reveal on scroll ===
 (function(){
   const els=[...document.querySelectorAll('.reveal,.reveal-pop')];
   if(!els.length) return;
@@ -101,27 +97,23 @@ if(btn&&nav){btn.addEventListener('click',()=>{nav.classList.toggle('is-open');b
   } else { els.forEach(el=>el.classList.add('is-in')); }
 })();
 
-// ==== Theme toggle ====
+// === Theme toggle with smooth transition ===
 (function(){
   const root=document.documentElement;
-  const btn=document.getElementById('theme-toggle');
+  const tbtn=document.getElementById('theme-toggle');
   const getPref=()=>localStorage.getItem('theme')|| (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
-  const apply=(t)=>{ root.setAttribute('data-theme',t); if(btn){ btn.querySelector('.ico').textContent = t==='dark' ? '🌙' : '🌞'; } };
+  const apply=(t)=>{ root.setAttribute('data-theme',t); if(tbtn){ tbtn.querySelector('.ico').textContent = t==='dark' ? '🌙' : '🌞'; } };
   let theme=getPref(); apply(theme);
-  if(btn){ btn.addEventListener('click', ()=>{
+  if(tbtn){ tbtn.addEventListener('click', ()=>{
     const next = (root.getAttribute('data-theme')==='dark')?'light':'dark';
-    root.classList.add('theme-transition');
-    apply(next);
-    localStorage.setItem('theme', next);
-    window.setTimeout(()=>root.classList.remove('theme-transition'), 220);
-  }); }
+    root.classList.add('theme-transition'); apply(next); localStorage.setItem('theme', next);
+    setTimeout(()=>root.classList.remove('theme-transition'), 220);
+  });}
 })();
 
-// ==== Service Worker ====
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(console.log);
-  });
+// === Service Worker registration ===
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{ navigator.serviceWorker.register('sw.js').catch(console.log); });
 }
-
-</script></body></html>
+</script>
+</body></html>
