@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'eva-static-v1-01ba';
+const CACHE_NAME = 'eva-static-v2';
 const PRECACHE_URLS = [
   "styles.css",
   "eva-logo.png",
