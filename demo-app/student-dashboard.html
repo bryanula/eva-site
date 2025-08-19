@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EVA — Mockup</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <a class="brand" href="index.html"><img src="eva-logo.png" alt="EVA"><span>EVA</span></a>
+    <div class="actions">
+      <a class="btn" href="student-dashboard.html">🎓 Estudiante</a>
+      <a class="btn" href="admin-dashboard.html">🛠 Admin</a>
+      <button class="btn" id="themeBtn">🌞</button>
+    </div>
+  </div>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="menu">
+        <a href="student-dashboard.html">Panel estudiante</a>
+        <a href="live-transcription.html">Transcripción en vivo</a>
+        <a href="reminders.html">Recordatorios</a>
+        <a href="admin-dashboard.html">Panel admin</a>
+        <a href="cases.html">Casos</a>
+        <a href="settings.html">Accesibilidad</a>
+      </nav>
+    </aside>
+    <main class="content">
+
+  <span class="kicker">Estudiante</span>
+  <h1 class="h1">Panel del estudiante</h1>
+  <div class="stats">
+    <div class="stat"><div class="label">Clases hoy</div><div class="value">3</div></div>
+    <div class="stat"><div class="label">Transcripciones</div><div class="value">12</div></div>
+    <div class="stat"><div class="label">Alertas esta semana</div><div class="value">5</div></div>
+    <div class="stat"><div class="label">Trámites en curso</div><div class="value">2</div></div>
+  </div>
+  <div class="grid cols-2" style="margin-top:1rem">
+    <div class="card">
+      <h3>Próximas clases</h3>
+      <table class="table">
+        <thead><tr><th>Hora</th><th>Curso</th><th>Modalidad</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>08:00</td><td>Física II</td><td>Presencial</td><td><a class="btn" href="live-transcription.html">Abrir</a></td></tr>
+          <tr><td>10:00</td><td>Sistemas Operativos</td><td>Virtual</td><td><a class="btn" href="live-transcription.html">Abrir</a></td></tr>
+          <tr><td>14:00</td><td>Química Analítica</td><td>Presencial</td><td><a class="btn" href="live-transcription.html">Abrir</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Recordatorios próximos</h3>
+      <ul>
+        <li><span class="badge warn">Hoy</span> Entrega de práctica</li>
+        <li><span class="badge ok">Mañana</span> Cita con Bienestar</li>
+        <li>Pago de matrícula — 25/09</li>
+      </ul>
+      <a class="btn" href="reminders.html">Preferencias</a>
+    </div>
+  </div>
+
+    </main>
+  </div>
+  <footer>Mockup interactivo estático • EVA</footer>
+</div>
+<div class="toast" id="toast">Preferencias guardadas</div>
+<script>
+(function(){
+  const root=document.documentElement; const btn=document.getElementById('themeBtn');
+  let theme=localStorage.getItem('theme')||'light';
+  root.setAttribute('data-theme',theme);
+  if(btn) btn.textContent=(theme==='dark'?'🌙':'🌞');
+  btn&&btn.addEventListener('click',()=>{
+    theme=(root.getAttribute('data-theme')==='dark')?'light':'dark';
+    root.setAttribute('data-theme',theme); localStorage.setItem('theme',theme);
+    btn.textContent=(theme==='dark'?'🌙':'🌞');
+  });
+})();
+function showToast(msg){const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1500);}
+</script>
+</body></html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EVA — Demo</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.demo-frame{width:100%;height:84vh;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+.demo-toolbar{display:flex;gap:.6rem;align-items:center;justify-content:space-between;margin:.6rem 0}
+.demo-toolbar .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);background:var(--surface);
+  color:var(--text);padding:.55rem .9rem;border-radius:.7rem;font-weight:800;box-shadow:var(--shadow);text-decoration:none}
+.demo-toolbar .btn:hover{background:var(--surface-2);}
+</style>
+</head>
+<body>
+<header class="header" role="banner">
+  <div class="container header__inner">
+    <a class="brand" href="index.html">
+      <img src="eva-logo.png" alt="Logo EVA"><span>EVA</span>
+    </a>
+    <div class="controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <span class="ico">🌞</span><span class="label">Tema</span>
+      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span class="hamb"></span>
+      </button>
+    </div>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="quienes.html">¿Quiénes somos?</a>
+      <a href="impacto.html">Impacto</a>
+      <a href="planes.html">Planes</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="demo.html" class="is-active">Demo</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" id="top">
+  <section>
+    <h2>Demo funcional — EVA</h2>
+    <p class="lead">Aquí puedes navegar un prototipo interactivo de la aplicación. Abre en pantalla completa si lo prefieres.</p>
+    <div class="demo-toolbar">
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <a class="btn" href="demo-app/student-dashboard.html" target="_blank">🎓 Abrir estudiante (nueva pestaña)</a>
+        <a class="btn" href="demo-app/admin-dashboard.html" target="_blank">🛠 Abrir admin (nueva pestaña)</a>
+      </div>
+      <a class="btn" href="demo-app/index.html" target="_blank">↗ Abrir demo completa</a>
+    </div>
+    <iframe class="demo-frame" src="demo-app/index.html" title="EVA Demo" loading="lazy"></iframe>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container" style="display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <p style="margin:0;color:var(--muted)">© 2025 EVA — Proyecto académico de inclusión.</p>
+    <a href="#top">Volver arriba ↑</a>
+  </div>
+</footer>
+<script>
+// mobile menu
+const btn=document.querySelector('.menu-toggle'), nav=document.getElementById('nav');
+if(btn&&nav){btn.addEventListener('click',()=>{nav.classList.toggle('is-open');btn.classList.toggle('open');const ex=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!ex));});}
+
+// theme toggle
+(function(){
+  const root=document.documentElement;
+  const btn=document.getElementById('theme-toggle');
+  const getPref=()=>localStorage.getItem('theme')|| (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  const apply=(t)=>{ root.setAttribute('data-theme',t); if(btn){ btn.querySelector('.ico').textContent = t==='dark' ? '🌙' : '🌞'; } };
+  let theme=getPref(); apply(theme);
+  if(btn){ btn.addEventListener('click', ()=>{
+    const next = (root.getAttribute('data-theme')==='dark')?'light':'dark';
+    root.classList.add('theme-transition'); apply(next); localStorage.setItem('theme', next);
+    setTimeout(()=>root.classList.remove('theme-transition'), 220);
+  });}
+})();
+</script>
+</body>
+</html>
