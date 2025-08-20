@@ -1,8 +1,9 @@
 
-const CACHE_NAME = 'eva-static-v2';
+const CACHE_NAME = 'eva-static-v3';
 const PRECACHE_URLS = [
   "styles.css",
   "eva-logo.png",
+  "evalogoface.jpg",
   "site.webmanifest",
   "icons/icon-512.png",
   "icons/icon-192.png",
@@ -20,13 +21,6 @@ const PRECACHE_URLS = [
   "icons/splash-1668x2224.png",
   "icons/splash-1668x2388.png",
   "icons/splash-2048x2732.png",
-  "index.html",
-  "servicios.html",
-  "quienes.html",
-  "impacto.html",
-  "planes.html",
-  "faq.html",
-  "contacto.html"
 ];
 
 self.addEventListener('install', event => {
