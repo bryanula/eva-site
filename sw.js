@@ -4,7 +4,6 @@ const PRECACHE_URLS = [
   "styles.css",
   "eva-logo.png",
   "evalogoface.jpg",
-  "site.webmanifest",
   "icons/icon-512.png",
   "icons/icon-192.png",
   "icons/apple-touch-icon.png",
